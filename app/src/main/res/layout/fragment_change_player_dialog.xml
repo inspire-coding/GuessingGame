@@ -40,8 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="Your name"
-                android:onTextChanged="@{() -> playerViewModel.setPlayersName(tilName.getText().toString())}"
                 android:textSize="@dimen/textsize_3xlarge" />
         </com.google.android.material.textfield.TextInputLayout>
 
