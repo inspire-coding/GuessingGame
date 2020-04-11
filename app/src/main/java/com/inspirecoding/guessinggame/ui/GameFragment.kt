@@ -11,18 +11,21 @@ import androidx.navigation.navGraphViewModels
 
 import com.inspirecoding.guessinggame.R
 import com.inspirecoding.guessinggame.databinding.FragmentGameBinding
+import com.inspirecoding.guessinggame.viewmodel.GameViewModel
 import com.inspirecoding.guessinggame.viewmodel.PlayerViewModel
 
 class GameFragment : Fragment()
 {
     private lateinit var binding: FragmentGameBinding
     private val playerViewModel by navGraphViewModels<PlayerViewModel>(R.id.navigation_graph)
+    private val gameViewModel by navGraphViewModels<GameViewModel>(R.id.navigation_graph)
 
     override fun onCreateView(layoutInflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_game, container, false)
         binding.lifecycleOwner = this
         binding.playerViewModel = playerViewModel
+        binding.gameViewModel = gameViewModel
 
         binding.tvPlayer.setOnClickListener {
             showDialog(it)
