@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="playerViewModel"
+            type="com.inspirecoding.guessinggame.viewmodel.PlayerViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:onTextChanged="@{() -> playerViewModel.setPlayersName(tilName.getText().toString())}"
                 android:textSize="@dimen/textsize_3xlarge" />
         </com.google.android.material.textfield.TextInputLayout>
 
