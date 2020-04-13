@@ -92,6 +92,8 @@
             android:padding="@dimen/margin_large"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_xlarge"
+            app:state="@{gameViewModel.isRunning}"
+            android:context="@{context}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_guess" />
@@ -104,6 +106,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_guess"
+            app:resultImage="@{gameViewModel.result}"
             tools:src="@drawable/trophy" />
 
         <TextView
@@ -115,6 +118,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_guess_result"
+            app:resultText="@{gameViewModel.result}"
+            android:context="@{context}"
             tools:text="You Win!" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
